@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日记本 - 首页</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        *{
+            margin: 0;
+        }
+        header{
+            background-color: #595959;
+            height: 60px;
+        }
+        .header-container{           
+            height: 100%;
+        }
+        .container, .header-container{
+            width: 90%;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        .logo-box{
+            float: left;
+            height: 100%;
+            width: 60px;
+            position: relative;
+        }
+        .logo-box > img{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -25px;
+            margin-left: -25px;
+        }
+        .menu-box{
+            float: right;
+            height: 100%;
+        }
+        .btn-box{
+            float: left;
+            width: 40px;
+            height: 100%;
+            margin-left: 10px;
+            position: relative;
+        }
+        .btn-box  img{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -20px;
+            margin-left: -20px;
+        }
+        .panel{
+            margin-top: 30px;
+        }
+        footer{
+            margin-top: 100px;
+            text-align: center;
+            font-size: 14px;
+            color: #989898;
+        }
+    </style>
+</head>
+<body>
+<!-- 头部 -->
+<header>
+    <div class="header-container">
+        <!-- 添加新的日记，注销用户 -->
+        <div class="logo-box">
+            <img src="images/logo.png" alt="logo">
+        </div>
+        <div class="menu-box">
+            <div class="btn-box">
+                <img src="images/add.png" title="添加">
+            </div>
+            <div class="btn-box">
+                <img src="images/quit.png" title="注销">
+            </div>      
+        </div>
+    </div>
+</header>
+<!-- 内容区域 -->
+<section>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">我是今天的日记标题  - 2018/10/3</div>
+            <div class="panel-body">
+                我是日记的内容
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">我是今天的日记标题  - 2018/10/3</div>
+            <div class="panel-body">
+                我是日记的内容
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- 底部 -->
+<footer>
+    <p>&copy; Kevin 紫薯网络工作室</p>
+</footer>
+</body>
+</html>
