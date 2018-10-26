@@ -1,2 +1,2 @@
-# ohaaha.github.io
+# ohaaha
 # hahhahhah
