@@ -1,115 +1,43 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>日记本 - 首页</title>
+    <title>test</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <style>
-        *{
+        * {
             margin: 0;
+            margin-top: 20px;
         }
-        header{
-            background-color: #595959;
-            height: 60px;
-        }
-        .header-container{           
-            height: 100%;
-        }
-        .container, .header-container{
-            width: 90%;
-            max-width: 980px;
-            margin: 0 auto;
-        }
-        .logo-box{
-            float: left;
-            height: 100%;
-            width: 60px;
-            position: relative;
-        }
-        .logo-box > img{
-            width: 50px;
+        .col-sm-3 {
             height: 50px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -25px;
-            margin-left: -25px;
-        }
-        .menu-box{
-            float: right;
-            height: 100%;
-        }
-        .btn-box{
-            float: left;
-            width: 40px;
-            height: 100%;
-            margin-left: 10px;
-            position: relative;
-        }
-        .btn-box  img{
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -20px;
-            margin-left: -20px;
-        }
-        .panel{
-            margin-top: 30px;
-        }
-        footer{
-            margin-top: 100px;
-            text-align: center;
-            font-size: 14px;
-            color: #989898;
         }
     </style>
 </head>
 <body>
-<!-- 头部 -->
-<header>
-    <div class="header-container">
-        <!-- 添加新的日记，注销用户 -->
-        <div class="logo-box">
-            <img src="images/logo.png" alt="logo">
-        </div>
-        <div class="menu-box">
-            <div class="btn-box">
-                <img src="images/add.png" title="添加">
-            </div>
-            <div class="btn-box">
-                <img src="images/quit.png" title="注销">
-            </div>      
-        </div>
-    </div>
-</header>
-<!-- 内容区域 -->
-<section>
     <div class="container">
-        <div class="panel panel-default">
-            <div class="panel-heading">我是今天的日记标题  - 2018/10/3</div>
-            <div class="panel-body">
-                我是日记的内容
-            </div>
+        <div class="col-sm-2">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#">我的信息</a></li>
+                <li><a href="#">我的轨迹</a></li>
+                <li><a href="#">我的计划</a></li>
+                <li><a href="#">留言</a></li>
+            </ul>  
+        </div>
+        <div class="col-sm-8"><h1>内容</h1>在 Bootstrap 2 中，我们对框架中的某些关键部分
+                增加了对移动设备友好的样式。而在 Bootstrap 3 中，我们重写了整个框架，
+                使其一开始就是对移动设备友好的。这次不是简单的增加一些可选的针对移动设备的样式，
+                而是直接融合进了框架的内核中。也就是说，Bootstrap 是移动设备优先的。
+                针对移动设备的样式融合进了框架的每个角落，而不是增加一个额外的文件。
+        </div>
+        <div class="col-sm-2"><h3>侧栏</h3>在 Bootstrap 2 中，我们对框架中的某些关键部分
+                增加了对移动设备友好的样式。而在 Bootstrap 3 中，我们重写了整个框架，
+                使其一开始就是对移动设备友好的。这次不是简单的增加一些可选的针对移动设备的样式，
+                而是直接融合进了框架的内核中。也就是说，Bootstrap 是移动设备优先的。
+                针对移动设备的样式融合进了框架的每个角落，而不是增加一个额外的文件。
         </div>
     </div>
-
-    <div class="container">
-        <div class="panel panel-default">
-            <div class="panel-heading">我是今天的日记标题  - 2018/10/3</div>
-            <div class="panel-body">
-                我是日记的内容
-            </div>
-        </div>
-    </div>
-
-</section>
-<!-- 底部 -->
-<footer>
-    <p>&copy; Kevin 紫薯网络工作室</p>
-</footer>
 </body>
 </html>
