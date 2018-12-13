@@ -4,48 +4,257 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <title>Document</title>
     <style>
         * {
             margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url("image/bg.jpg") no-repeat;
+            background-position: center 0;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .menu2 {
+            position: fixed;
+            top: 5%;
+            left: 5%;
+        }
+        .menu2 span {
+            font-size: 30px;
+            color: #6BBEB6;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .menu2 span:hover {
+            color: rgb(56, 170, 159);
+        }
+        /* 左边弹出层 */
+        .left {
+            position: fixed;
+            top: 0;
+            left: -20%;
+            width: 20%;
+            height: 100%;
+            background-color: aliceblue;
+            overflow: hidden;
+            transition: .3s;
+        }
+        .top{
+            width: 100%;
+            height: 20%;
+            position: relative;
+        }
+        .top>img {
+            width: 100%;
+            height: 100%;
+        }
+        .head {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+            left: 4%;
+            transform: translateY(-50%);
+        }
+        .head img {
+            width: 100%;
+            height: 100%;
+        }
+        .top>span {
+            font-size: 26px;
+            color: #6BBEB6;
+            position: absolute;
+            top: 2%;
+            right: 2%;
+            cursor: pointer;
+        }
+        .mes {
+            position: absolute;
+            left: 0;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+            transition: .3s;
+        }
+        .mes:hover {
+            background-color: rgba(98, 98, 98, .5);
+        }
+        .mes span{
+            line-height: 30px;
+            color: rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+            font-size: 15px;
+        }
+        .select {
             margin-top: 20px;
         }
-        .navgation {
-            width: 100%;
-            height: 80px;
-            background-color: red;
-            opacity: 0.8;
-            border-radius: 5px;
+        .sel {
+            width: 20%;
+            line-height: 40px;
+            font-size: 20px;
+            padding-left: 5px;
+            float: left;
         }
-        .col-sm-3 {
-            height: 50px;
+        .word {
+            width: 80%;
+            font-size: 15px;
+            padding-left: 25%;
+            line-height: 40px;
+        }
+        .item {
+            color: #989898;
+            transition: .3s;
+        }
+        .item:hover {
+            background: rgba(211, 204, 204, 0.5);
+            cursor: pointer;
+            color: #6BBEB6;
+        }
+        .fa-caret-down {
+            float: right;
+            line-height: 40px;
+            font-size: 20px;
+            margin-right: 20px;
+        }
+        .hide {
+            background-color: rgba(98, 98, 98, .5);
+            width: 100%;
+            height: 40px;
+            color: beige;
+            line-height: 40px;
+            text-align: center;
+            display: none;
+        }
+        .hide b {
+            font-size: 14px;
+        }
+        .bottom {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #989898;
+            position: absolute;
+            bottom: 0;
+        }
+        #menu {
+            transition: .3s;
+        }
+        #menu:hover {
+            color: rgb(56, 170, 159);
+        }
+        /* /左边弹出层 */
+        /* 遮罩层 */
+        .mask {     
+            position: fixed; 
+            top: 0px; 
+            filter: alpha(opacity=60); 
+            background-color: #777;   
+            z-index: 1002; 
+            left: 20%;   
+            opacity:0.5; 
+            -moz-opacity:0.5;   
+            height: 100%;
+            width: 80%;
+        }
+        /* /遮罩层 */
+        .content {
+            width: 60%;
+            background-color: rgba(98, 98, 98, .5);
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .temp {
+            height: 300px;
+            width: 100%;
+            border: 1px solid #6BBEB6;  
+        }
+        .temp img {
+            height: 60%;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav class="navgation"></nav> 
-        <div class="col-sm-2">
-            <h3>主侧栏</h3>在 Bootstrap 2 中，我们对框架中的某些关键部分
-            增加了对移动设备友好的样式。而在 Bootstrap 3 中，我们重写了整个框架，
-            使其一开始就是对移动设备友好的。这次不是简单的增加一些可选的针对移动设备的样式，
-            而是直接融合进了框架的内核中。也就是说，Bootstrap 是移动设备优先的。
-            针对移动设备的样式融合进了框架的每个角落，而不是增加一个额外的文件。 
+    <div class="menu2"><span class="fa fa-bars"></span></div>
+    <!-- 左边弹出层 -->
+    <section class="left">
+        <div class="top">
+            <img src="image/bg2.jpg" alt="bg" />
+            <div class="head">
+                <img src="image/head.jpg" alt="touxiang">
+            </div>
+            <span id="menu" class="fa fa-bars"></span>
+            <div class="mes"><span>啥也没有</span></div>
         </div>
-        <div class="col-sm-8"><h1>内容</h1>在 Bootstrap 2 中，我们对框架中的某些关键部分
-                增加了对移动设备友好的样式。而在 Bootstrap 3 中，我们重写了整个框架，
-                使其一开始就是对移动设备友好的。这次不是简单的增加一些可选的针对移动设备的样式，
-                而是直接融合进了框架的内核中。也就是说，Bootstrap 是移动设备优先的。
-                针对移动设备的样式融合进了框架的每个角落，而不是增加一个额外的文件。<br />
-                <a href="https://www.baidu.com/"><button class="btn btn-primary">百度一下</button></a>
+        <div class="select">
+            <div class="item">
+                <div class="sel" style="font-size: 27px"><span class="fa fa-home"></span></div>
+                <div class="word"><b>首页</b></div>
+            </div>
+            <div class="item">
+                <div class="sel"><span class="fa fa-newspaper-o"></span></div>
+                <div class="word"><b>我的文章</b></div>
+            </div>
+            <div class="item">
+                <div class="sel"><span class="fa fa-image"></span></div>
+                <div class="word"><b>我的图片</b></div>
+            </div>
+            <div class="item" id="touch">
+                <div class="sel" style="font-size: 24px"><span class="fa fa-stack-overflow"></span></div>
+                <div class="word"><b>联系我</b><span class="fa fa-caret-down"></span></div>
+            </div>
+            <div class="hide">
+                <b>1258485146@qq.com</b>
+            </div>
+            <div class="item">
+                <div class="sel" style="font-size: 27px"><span class="fa fa-user"></span></div>
+                <div class="word"><b>关于我</b></div>
+            </div>
         </div>
-        <div class="col-sm-2"><h3>侧栏</h3>在 Bootstrap 2 中，我们对框架中的某些关键部分
-                增加了对移动设备友好的样式。而在 Bootstrap 3 中，我们重写了整个框架，
-                使其一开始就是对移动设备友好的。这次不是简单的增加一些可选的针对移动设备的样式，
-                而是直接融合进了框架的内核中。也就是说，Bootstrap 是移动设备优先的。
-                针对移动设备的样式融合进了框架的每个角落，而不是增加一个额外的文件。
+        <div class="bottom">
+            <span>Designed by ohaaha</span>
         </div>
-    </div>
+    </section>
+    <!-- /左边弹出层 -->
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+    <!-- /遮罩层 -->
+    <!-- 内容 -->
+    <section class="content">
+        <div class="temp">
+            <!-- <img src="image/top.png" alt="没有提示" /> -->
+        </div>
+    </section>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(".mask").hide(); // 隐藏遮盖层
+
+        // 处理菜单选项中的隐藏项 
+        $("#touch").click(function() {
+            $(".hide").slideToggle();
+        })
+        // 处理菜单中的菜单按钮
+        $("#menu").click(function() {
+            $(".left").css("left", "-20%");
+            $(".menu2").css("display", "block");
+            $(".mask").hide(); 
+        })
+        // 处理主页面的菜单按钮
+        $(".menu2").click(function() {
+            $(".left").css("left", "0");
+            $(".menu2").css("display", "none");  
+            $(".mask").show();
+        })
+    </script>
 </body>
 </html>
