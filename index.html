@@ -182,6 +182,13 @@
             height: 60%;
             width: 100%;
         }
+        a {
+            text-decoration: none;
+            color: #989898;
+        }
+        a:hover {
+            color: #6BBEB6;
+        }
     </style>
 </head>
 <body>
@@ -198,8 +205,8 @@
         </div>
         <div class="select">
             <div class="item">
-                <div class="sel" style="font-size: 27px"><span class="fa fa-home"></span></div>
-                <div class="word"><b>首页</b></div>
+                <a href="article.html"><div class="sel" style="font-size: 27px"><span class="fa fa-home"></span></div>
+                <div class="word"><b>首页</b></div></a>
             </div>
             <div class="item">
                 <div class="sel"><span class="fa fa-newspaper-o"></span></div>
@@ -244,7 +251,7 @@
             $(".hide").slideToggle();
         })
         // 处理菜单中的菜单按钮
-        $("#menu").click(function() {
+        $("#menu, .mask").click(function() {
             $(".left").css("left", "-20%");
             $(".menu2").css("display", "block");
             $(".mask").hide(); 
