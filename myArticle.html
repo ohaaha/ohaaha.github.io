@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="image/bitbug_favicon.ico" /> 
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <title>文章详情</title>
+    <link rel="shortcut icon" href="image/bitbug_favicon.ico" />
+    <title>我的文章</title>
     <style>
         * {
             margin: 0;
@@ -172,22 +172,38 @@
             top: 20%;
             left: 50%;
             transform: translateX(-50%);
-            background-color: aliceblue;
             border-radius: 5px;
+        }
+        .title {
+            text-align: center;
+        }
+        .temp {
+            background-color: aliceblue;
+            /* box-sizing: border-box; */
+            height: 300px;
+            width: 100%;
+            margin-bottom: 20px;
+            color: rgb(6, 126, 114);
             border: 5px solid aliceblue;
-            text-align: center;
+            border-radius: 5px; 
+            cursor: pointer;
+            transition: .3s;
+            line-height: 28px;
+            overflow: hidden;
         }
-        .temp>h2 {
-            text-align: center; 
-            margin-top: 20px;
-            color: #6BBEB6;
+        .temp span {
+            color: rgb(65, 64, 64);
         }
-        .date {
-            /* float: right; */
-            text-align: center;
-            line-height: 40px;
-            margin-left: 20%;
-            color: #989898;
+        .temp:hover {
+            background-color: #6BBEB6;
+            box-shadow: 10px 10px 10px;
+            margin-left: 40px;
+        }
+        .temp img {
+            height: 70%;
+            width: 100%;
+            border-top-left-radius: 5px; 
+            border-top-right-radius: 5px;  
         }
         a {
             text-decoration: none;
@@ -195,11 +211,6 @@
         }
         a:hover {
             color: #6BBEB6;
-        }
-        .line {
-            height: 2px;
-            width: 100%;
-            background-color: #6BBEB6;
         }
     </style>
 </head>
@@ -251,41 +262,34 @@
     <!-- 内容 -->
     <section class="content">
         <div class="temp">
-            <h2>git的使用</h2>
-            <div class="date">---<b>2018/12/2</b></div>
-            <div class="line"></div>
-            <div class="text">
-                git --version  查看git版本<br />
-                安装好git之后进入github注册账号;<br />
-                免费的别人可以看你的代码，要进入邮箱激活<br />
-                然后创建一个仓库<br />
-                写一个README，别人访问你的仓库，下面会显示的内容<br />
-                要用markdown语言写<br />
-                Gitpages给我们提供了免费的主页<br />
-                新建一个仓库，<br />
-                命名为:用户名.github.io然后就可以访问了<br />
-                添加一个README就可以看到了<br />
-                添加一个index.html<br />
-                配置git，配置用户名和邮箱<br />
-                git config --global user.name 用户名<br />
-                git config --global user.name 邮箱<br />
-
-                克隆文件：复制地址 右键点击一个文件夹打开git<br />
-                git clone 地址<br />
-                上传一个文件<br />
-                cd 仓库名<br />
-                git add 文件名<br />
-                git commit<br />
-                跳转到最后：shift+g<br />
-                下面新加一行：o<br />
-                退出编辑模式：esc<br />
-                保存退出：shift+z+z<br />
-                现在已经提交到.git里面了<br />
-                推送到远程：git push<br />
-
-                把远程的更新下载到本地<br />
-                git pull<br />
-            </div>
+            <img src="image/ar1.jpg" alt="没有提示" />
+            <div class="title"><h2>git的使用</h2></div>
+            <span>git --version  查看git版本
+                安装好git之后进入github注册账号;
+                免费的别人可以看你的代码，要进入邮箱激活
+                然后创建一个仓库
+                写一个README，别人访问你的仓库，下面会显示的内容
+                要用markdown语言写...</span>
+        </div>
+        <div class="temp">
+            <img src="image/ar2.jpg" alt="没有提示" />
+            <div class="title"><h2>Jquery的Ajax请求源代码</h2></div>
+            <span>git --version  查看git版本
+                安装好git之后进入github注册账号;
+                免费的别人可以看你的代码，要进入邮箱激活
+                然后创建一个仓库
+                写一个README，别人访问你的仓库，下面会显示的内容
+                要用markdown语言写...</span>
+        </div>
+        <div class="temp">
+            <img src="image/ar3.jpg" alt="没有提示" />
+            <div class="title"><h2>Typescript</h2></div>
+            <span>git --version  查看git版本
+                安装好git之后进入github注册账号;
+                免费的别人可以看你的代码，要进入邮箱激活
+                然后创建一个仓库
+                写一个README，别人访问你的仓库，下面会显示的内容
+                要用markdown语言写...</span>
         </div>
     </section>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
