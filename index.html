@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="image/bitbug_favicon.ico" />
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <link rel="stylesheet" href="css/base.css">
+    <title>首页</title>
     <style>
         * {
             margin: 0;
@@ -19,191 +20,130 @@
             background-attachment: fixed;
             font-family: Arial, Helvetica, sans-serif;
         }
-        .menu2 {
-            position: fixed;
-            top: 5%;
-            left: 5%;
-        }
-        .menu2 span {
-            font-size: 30px;
-            color: #6BBEB6;
-            cursor: pointer;
-            transition: .3s;
-        }
-        .menu2 span:hover {
-            color: rgb(56, 170, 159);
-        }
-        /* 左边弹出层 */
-        .left {
-            position: fixed;
-            top: 0;
-            left: -20%;
-            width: 20%;
-            height: 100%;
-            background-color: aliceblue;
-            overflow: hidden;
-            transition: .3s;
-        }
-        .top{
-            width: 100%;
-            height: 20%;
-            position: relative;
-        }
-        .top>img {
-            width: 100%;
-            height: 100%;
-        }
-        .head {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            overflow: hidden;
-            position: absolute;
-            top: 50%;
-            left: 4%;
-            transform: translateY(-50%);
-        }
-        .head img {
-            width: 100%;
-            height: 100%;
-        }
-        .top>span {
-            font-size: 26px;
-            color: #6BBEB6;
-            position: absolute;
-            top: 2%;
-            right: 2%;
-            cursor: pointer;
-        }
-        .mes {
-            position: absolute;
-            left: 0;
-            text-align: center;
-            bottom: 0;
-            width: 100%;
-            height: 30px;
-            transition: .3s;
-        }
-        .mes:hover {
-            background-color: rgba(98, 98, 98, .5);
-        }
-        .mes span{
-            line-height: 30px;
-            color: rgba(255, 255, 255, 0.8);
-            overflow: hidden;
-            font-size: 15px;
-        }
-        .select {
-            margin-top: 20px;
-        }
-        .sel {
-            width: 20%;
-            line-height: 40px;
-            font-size: 20px;
-            padding-left: 5px;
-            float: left;
-        }
-        .word {
-            width: 80%;
-            font-size: 15px;
-            padding-left: 25%;
-            line-height: 40px;
-        }
-        .item {
-            color: #989898;
-            transition: .3s;
-        }
-        .item:hover {
-            background: rgba(211, 204, 204, 0.5);
-            cursor: pointer;
-            color: #6BBEB6;
-        }
-        .fa-caret-down {
-            float: right;
-            line-height: 40px;
-            font-size: 20px;
-            margin-right: 20px;
-        }
-        .hide {
-            background-color: rgba(98, 98, 98, .5);
-            width: 100%;
-            height: 40px;
-            color: beige;
-            line-height: 40px;
-            text-align: center;
-            display: none;
-        }
-        .hide b {
-            font-size: 14px;
-        }
-        .bottom {
-            width: 100%;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            color: #989898;
-            position: absolute;
-            bottom: 0;
-        }
-        #menu {
-            transition: .3s;
-        }
-        #menu:hover {
-            color: rgb(56, 170, 159);
-        }
-        /* /左边弹出层 */
-        /* 遮罩层 */
-        .mask {     
-            position: fixed; 
-            top: 0px; 
-            filter: alpha(opacity=60); 
-            background-color: #777;   
-            z-index: 1002; 
-            left: 20%;   
-            opacity:0.5; 
-            -moz-opacity:0.5;   
-            height: 100%;
-            width: 80%;
-        }
-        /* /遮罩层 */
         .content {
             width: 60%;
-            /* background-color: aliceblue;
-            border: 5px solid aliceblue; */
             position: absolute;
             top: 20%;
             left: 50%;
             transform: translateX(-50%);
         }
-        .temp {
-            text-align: center;
-            color: #6BBEB6;
+        .flash {
+            width: 100%;
+            height: 30vw;
+            position: relative; 
+            cursor: pointer;
+            border: 5px solid aliceblue;
             border-radius: 5px;
+            overflow: hidden;
         }
-        .square {
+        .pic img{
+            width: 100%;
+            height: 30vw;
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .pic ul {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 5px;
+        }
+        .pic ul li {
+            list-style: none; 
+            height: 4px;
+            width: 20px;
+            float: left;
+            margin-left: 8px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .arrow1, .arrow2{
+            position: absolute;
+            height: 100%;
+            width: 8%;
+            display: none;
+        }
+        .arrow2 {
+            right: 0;
+        }
+        .arrow1 i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            color: #989898;
+            font-size: 30px;    
+            transform: translateY(-50%);
+        }
+        .arrow2 i {
+            position: absolute;
+            right: 20px;
+            color: #989898;
+            top: 50%;
+            font-size: 30px;  
+            transform: translateY(-50%);
+        }
+        .arrow1:hover, .arrow2:hover {
+            background-color: rgba(98,98,98,0.4);
+            transition: 0.5s;
+        }
+        /* 最近笔记 */
+        .chunk {
+            border: 5px solid aliceblue;
+            border-radius: 5px;
+            height: 20vw;
+            margin-bottom: 4vw;
+        }
+        .label{
+            width: 100%;
+            height: 4vw;
+            line-height: 4vw;
+            font-size: 1.5vw;
+            color: black;
             text-align: center;
-            width: 100px;
-            height: 120px;
+        }
+        .temp {
+            width: 100%;
+            float: right;
+            background-color: aliceblue;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 20vw;
+            transition: background-color 1s;
+        }
+        .temp span {
+            color: rgb(65, 64, 64);
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 1vw;
+            line-height: 2vw
+        }
+        .image {
+            width: 100%;
+            height: 16vw;
+            position: relative;
+        }
+        .image img {
+            width: 100%;
+            height: 16vw;
+        }
+        .title {
+            position: absolute;
+            left: 1%;
+            bottom: 14%;
+            font-size: 2vw;
             color: aliceblue;
         }
-        .square>div:first-child {
-            width: 100%;
-            font-size: 30px;
-            line-height: 100px;
+        .date {
+            color: #989898;
+            text-align: right;
+            font-size: 1vw;
+            padding-right: 1vw;
+            line-height: 1vw;
+        }
+        .temp:hover {
             background-color: #6BBEB6;
-        }
-        .square>div {
-            background-color: aliceblue;
-            color: #989898;
-            width: 100%;
-            line-height: 20px;
-        }
-        a {
-            text-decoration: none;
-            color: #989898;
-        }
-        a:hover {
-            color: #6BBEB6;
         }
     </style>
 </head>
@@ -221,27 +161,27 @@
         </div>
         <div class="select">
             <div class="item">
-                <a href="index.html"><div class="sel" style="font-size: 27px"><span class="fa fa-home"></span></div>
+                <a href="index.html"><div class="sel"><span class="fa fa-home"></span></div>
                 <div class="word"><b>首页</b></div></a>
             </div>
             <div class="item">
-                <a href="myArticle.html"><div class="sel"><span class="fa fa-newspaper-o"></span></div>
+                <a href="myArticle.html"><div class="sel"><span class="far fa-newspaper"></span></div>
                 <div class="word"><b>我的笔记</b></div></a>
             </div>
             <div class="item">
-                <a href="myImage.html"><div class="sel"><span class="fa fa-image"></span></div>
+                <a href="myImage.html"><div class="sel"><span class="fas fa-image"></span></div>
                 <div class="word"><b>我的图片</b></div></a>
             </div>
             <div class="item" id="touch">
-                <div class="sel" style="font-size: 24px"><span class="fa fa-stack-overflow"></span></div>
-                <div class="word"><b>联系我</b><span class="fa fa-caret-down"></span></div></a>
+                <div class="sel"><span class="far fa-envelope"></span></div>
+                <div class="word"><b>联系我</b><span class="fa fa-caret-down"></span></div>
             </div>
             <div class="hide">
                 <b>1258485146@qq.com</b>
             </div>
             <div class="item">
-                <a href="aboutMe.html"></a><div class="sel" style="font-size: 27px"><span class="fa fa-user"></span></div>
-                <div class="word"><b>关于我</b></div>
+                <a href="aboutMe.html"><div class="sel"><span class="fa fa-user"></span></div>
+                <div class="word"><b>关于我</b></div></a>
             </div>
         </div>
         <div class="bottom">
@@ -254,16 +194,48 @@
     <!-- /遮罩层 -->
     <!-- 内容 -->
     <section class="content">
-        <div class="temp">
-            <h1>一个刚接触WEB编程的少年</h1>
-        </div>
-        <div class="square">
-            <div class="fa fa-code"></div>
-            <div class="state"><b>html</b></div>
+        <div class="flash">
+            <div class="pic">
+                <img src="./image/lunbo1.jpg" alt="图片" style="display: block">
+                <img src="./image/lunbo2.jpg" alt="图片">
+                <img src="./image/lunbo3.jpg" alt="图片">
+                <img src="./image/lunbo4.jpg" alt="图片">
+                <ul>
+                    <li style="background-color: #6BBEB6; width: 40px"></li>
+                    <li></li>
+                    <li></li> 
+                    <li></li>
+                </ul>
+            </div>  
+            <div class="arrow1">
+                <i class="fa fa-chevron-left"></i>
+            </div>
+            <div class="arrow2">
+                <i class="fa fa-chevron-right"></i>
+            </div> 
+        </div> 
+        <div class="label"><b>最近笔记</b></div>
+        <div class="chunk">
+            <a href="article1.html"><div class="temp">
+                <div class="image"><img src="image/ar1.jpg" alt="没有提示" /></div>
+                <div class="title"><b>GIT的使用</b></div>
+                <span> git --version  查看git版本
+                    安装好git之后进入github注册账号;
+                    免费的别人可以看你的代码，要进入邮箱激活
+                    然后创建一个仓库
+                    写一个README，别人访问你的仓库，下面会显示的内容
+                    要用markdown语言写...</span>
+                <div class="date"><i>---2018/12/17</i></div>
+            </div></a>
         </div>
     </section>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script>
+        var img = $(".pic img"); 
+        var li = $(".pic ul li");
+        var temp = 0;
+        var fla = $(".flash");
+        var timer = setInterval(run, 1500)
         $(".mask").hide(); // 隐藏遮盖层
 
         // 处理菜单选项中的隐藏项 
@@ -281,6 +253,35 @@
             $(".left").css("left", "0");
             $(".menu2").css("display", "none");  
             $(".mask").show();
+        })
+        function run() {
+            temp++;
+            temp = temp==img.length?0:temp;
+            swap();
+        }
+        function swap() {
+            img.eq(temp).fadeIn(300).siblings('img').fadeOut(300);
+            li.eq(temp).css({"backgroundColor":"#6BBEB6", "width":"40px"}).siblings('li')
+            .css({"backgroundColor":"white", "width":"20px"});
+        }
+        fla.hover(function() {
+            clearInterval(timer);
+            $(".arrow1,.arrow2").css('display','block');
+        }, function() {
+            timer = setInterval(run, 1500);
+            $(".arrow1,.arrow2").css('display','none');
+        })
+        li.mouseenter(function() {
+            temp = $(this).index();
+            swap();
+        })
+        $(".arrow1").click(function() {
+            temp = temp==0?(img.length-1):(temp-1);
+            swap();
+        })
+        $(".arrow2").click(function() {
+            temp = temp==(img.length-1)?0:(temp+1);
+            swap();
         })
     </script>
 </body>

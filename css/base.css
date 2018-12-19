@@ -1,0 +1,155 @@
+.menu2 {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+}
+.menu2 span {
+    font-size: 30px;
+    color: #6BBEB6;
+    cursor: pointer;
+    transition: .3s;
+}
+.menu2 span:hover {
+    color: rgb(56, 170, 159);
+}
+/* 左边弹出层 */
+.left {
+    position: fixed;
+    top: 0;
+    left: -20%;
+    width: 20%;
+    height: 100%;
+    background-color: aliceblue;
+    overflow: hidden;
+    transition: .3s;
+    z-index: 666;
+}
+.top{
+    width: 100%;
+    height: 10vw;
+    position: relative;
+}
+.top>img {
+    width: 100%;
+    height: 100%;
+}
+.head {
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+}
+.head img {
+    width: 100%;
+    height: 100%;
+}
+.top>span {
+    font-size: 26px;
+    color: #6BBEB6;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    cursor: pointer;
+}
+.mes {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    transition: .3s;
+}
+.mes:hover {
+    background-color: rgba(98, 98, 98, .5);
+}
+.mes span{
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    font-size: 15px;
+}
+.select {
+    margin-top: 20px;
+}
+.sel {
+    width: 20%;
+    line-height: 40px;
+    font-size: 22px;
+    padding-left: 5px;
+    float: left;
+}
+.word {
+    width: 80%;
+    font-size: 15px;
+    padding-left: 25%;
+    line-height: 40px;
+}
+.item {
+    color: #989898;
+    transition: .3s;
+}
+.item:hover {
+    background: rgba(211, 204, 204, 0.5);
+    cursor: pointer;
+    color: #6BBEB6;
+}
+.fa-caret-down {
+    float: right;
+    line-height: 40px;
+    font-size: 20px;
+    margin-right: 20px;
+}
+.hide {
+    background-color: rgba(98, 98, 98, .5);
+    width: 100%;
+    height: 40px;
+    color: beige;
+    line-height: 40px;
+    text-align: center;
+    display: none;
+}
+.hide b {
+    font-size: 14px;
+}
+.bottom {
+    width: 100%;
+    height: 2vw;
+    line-height: 2vw;
+    text-align: center;
+    font-size: 1vw;
+    color: #989898;
+    position: absolute;
+    bottom: 0;
+}
+#menu {
+    transition: .3s;
+}
+#menu:hover {
+    color: rgb(56, 170, 159);
+}
+/* /左边弹出层 */
+/* 遮罩层 */
+.mask {     
+    position: fixed; 
+    top: 0px; 
+    filter: alpha(opacity=60); 
+    background-color: #777;   
+    z-index: 1002; 
+    left: 20%;   
+    opacity:0.5; 
+    -moz-opacity:0.5;   
+    height: 100%;
+    width: 80%;
+}
+a {
+    text-decoration: none;
+    color: #989898;
+}
+a:hover {
+    color: #6BBEB6;
+}

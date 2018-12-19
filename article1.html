@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="image/bitbug_favicon.ico" /> 
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <title>文章详情</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+    <link rel="stylesheet" href="css/base.css">
+    <title>笔记详情</title>
     <style>
         * {
             margin: 0;
@@ -19,153 +20,6 @@
             background-attachment: fixed;
             font-family: Arial, Helvetica, sans-serif;
         }
-        .menu2 {
-            position: fixed;
-            top: 5%;
-            left: 5%;
-        }
-        .menu2 span {
-            font-size: 30px;
-            color: #6BBEB6;
-            cursor: pointer;
-            transition: .3s;
-        }
-        .menu2 span:hover {
-            color: rgb(56, 170, 159);
-        }
-        /* 左边弹出层 */
-        .left {
-            position: fixed;
-            top: 0;
-            left: -20%;
-            width: 20%;
-            height: 100%;
-            background-color: aliceblue;
-            overflow: hidden;
-            transition: .3s;
-        }
-        .top{
-            width: 100%;
-            height: 20%;
-            position: relative;
-        }
-        .top>img {
-            width: 100%;
-            height: 100%;
-        }
-        .head {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            overflow: hidden;
-            position: absolute;
-            top: 50%;
-            left: 4%;
-            transform: translateY(-50%);
-        }
-        .head img {
-            width: 100%;
-            height: 100%;
-        }
-        .top>span {
-            font-size: 26px;
-            color: #6BBEB6;
-            position: absolute;
-            top: 2%;
-            right: 2%;
-            cursor: pointer;
-        }
-        .mes {
-            position: absolute;
-            left: 0;
-            text-align: center;
-            bottom: 0;
-            width: 100%;
-            height: 30px;
-            transition: .3s;
-        }
-        .mes:hover {
-            background-color: rgba(98, 98, 98, .5);
-        }
-        .mes span{
-            line-height: 30px;
-            color: rgba(255, 255, 255, 0.8);
-            overflow: hidden;
-            font-size: 15px;
-        }
-        .select {
-            margin-top: 20px;
-        }
-        .sel {
-            width: 20%;
-            line-height: 40px;
-            font-size: 20px;
-            padding-left: 5px;
-            float: left;
-        }
-        .word {
-            width: 80%;
-            font-size: 15px;
-            padding-left: 25%;
-            line-height: 40px;
-        }
-        .item {
-            color: #989898;
-            transition: .3s;
-        }
-        .item:hover {
-            background: rgba(211, 204, 204, 0.5);
-            cursor: pointer;
-            color: #6BBEB6;
-        }
-        .fa-caret-down {
-            float: right;
-            line-height: 40px;
-            font-size: 20px;
-            margin-right: 20px;
-        }
-        .hide {
-            background-color: rgba(98, 98, 98, .5);
-            width: 100%;
-            height: 40px;
-            color: beige;
-            line-height: 40px;
-            text-align: center;
-            display: none;
-        }
-        .hide b {
-            font-size: 14px;
-        }
-        .bottom {
-            width: 100%;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            color: #989898;
-            position: absolute;
-            bottom: 0;
-        }
-        #menu {
-            transition: .3s;
-        }
-        #menu:hover {
-            color: rgb(56, 170, 159);
-        }
-        /* /左边弹出层 */
-        /* 遮罩层 */
-        .mask {     
-            position: fixed; 
-            top: 0px; 
-            filter: alpha(opacity=60); 
-            background-color: #777;   
-            z-index: 1002; 
-            left: 20%;   
-            opacity:0.5; 
-            -moz-opacity:0.5;   
-            height: 100%;
-            width: 80%;
-        }
-        /* /遮罩层 */
         .content {
             width: 60%;
             position: absolute;
@@ -176,6 +30,7 @@
             border-radius: 5px;
             border: 5px solid aliceblue;
             text-align: center;
+            margin-bottom: 200px;
         }
         .temp>h2 {
             text-align: center; 
@@ -188,13 +43,6 @@
             line-height: 40px;
             margin-left: 20%;
             color: #989898;
-        }
-        a {
-            text-decoration: none;
-            color: #989898;
-        }
-        a:hover {
-            color: #6BBEB6;
         }
         .line {
             height: 2px;
@@ -217,26 +65,26 @@
         </div>
         <div class="select">
             <div class="item">
-                <a href="index.html"><div class="sel" style="font-size: 27px"><span class="fa fa-home"></span></div>
+                <a href="index.html"><div class="sel"><span class="fa fa-home"></span></div>
                 <div class="word"><b>首页</b></div></a>
             </div>
             <div class="item">
-                <a href="myArticle.html"><div class="sel"><span class="fa fa-newspaper-o"></span></div>
+                <a href="myArticle.html"><div class="sel"><span class="far fa-newspaper"></span></div>
                 <div class="word"><b>我的笔记</b></div></a>
             </div>
             <div class="item">
-                <a href="myImage.html"><div class="sel"><span class="fa fa-image"></span></div>
+                <a href="myImage.html"><div class="sel"><span class="fas fa-image"></span></div>
                 <div class="word"><b>我的图片</b></div></a>
             </div>
             <div class="item" id="touch">
-                <div class="sel" style="font-size: 24px"><span class="fa fa-stack-overflow"></span></div>
+                <div class="sel"><span class="far fa-envelope"></span></div>
                 <div class="word"><b>联系我</b><span class="fa fa-caret-down"></span></div>
             </div>
             <div class="hide">
                 <b>1258485146@qq.com</b>
             </div>
             <div class="item">
-                <a href="aboutMe.html"><div class="sel" style="font-size: 27px"><span class="fa fa-user"></span></div>
+                <a href="aboutMe.html"><div class="sel"><span class="fa fa-user"></span></div>
                 <div class="word"><b>关于我</b></div></a>
             </div>
         </div>
